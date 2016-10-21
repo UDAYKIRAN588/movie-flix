@@ -1,0 +1,11 @@
+<div class="container">
+
+  <header>
+ <ul class="nav nav-pills">
+        <li><a ng-click="moviesVm.path='views/movies2.tmpl.html'">Movies</a> </li>
+        <li> <a ng-click="moviesVm.path='views/user.tmpl.html'">User</a></li>
+        <li><a href="#">Menu 2</a></li>
+      </ul>
+    </header>
+<div ng-include="moviesVm.path"></div>
+</div>

@@ -1,0 +1,78 @@
+<div class="container">
+  <h2>MOVIEFLIX <small>Registration</small></h2>
+  <form class="form-horizontal" novalidate name="signupForm">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="firstName">First Name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="signupVm.login.firstName" name="firstName" id="fName" placeholder="Enter First Name" required>
+        <div class="error" ng-if="signupForm.firstName.$dirty" ng-messages="signupForm.firstName.$error">
+          <p ng-message="required">First Name Required</p>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="fName">Last Name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="signupVm.login.lastName" id="lastName" name="lastName" placeholder="Enter Last Name" required>
+        <div class="error" ng-if="signupForm.lastName.$dirty" ng-messages="signupForm.lastName.$error">
+          <p ng-message="required">>Last Name Required</p>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="uName">User Name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="signupVm.login.uName" id="uName" name="uName" placeholder="Enter User Name " minlength=4 required>
+        <div class="error" ng-if="signupForm.user_id.$dirty" ng-messages="signupForm.uName.$error">
+          <p ng-message="required">User Name Required</p>
+          <p ng-message="minlength">Length should be at least length 4</p>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Email:</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" ng-model="signupVm.login.email" id="email" name="email" placeholder="Enter email" required>
+        <div class="error" ng-if="signupForm.email.$dirty" ng-messages="signupForm.email.$error">
+          <p ng-message="required">Email Required</p>
+          <p ng-message="email">Email Invalid</p>
+     
+   </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Password:</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" ng-model="signupVm.login.passwd" id="passwd" name="passwd" placeholder="Enter password" required minlength=4>
+        <div class="error" ng-if="signupForm.passwd.$dirty" ng-messages="signupForm.passwd.$error">
+          <p ng-message="required">Length should be at least4</p>
+          <p ng-message="minlength">min length 4</p>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="Confirm Password">Confirm Password:</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" ng-model="signupVm.login.cPasswd" id="ConfirmPassword" name="cPasswd" required minlength=4>
+        <div class="error" ng-if="signupForm.cPasswd.$dirty" ng-messages="signupForm.cPasswd.$error">
+          <p ng-message="required">password Required</p>
+          <p ng-message="minlength">Length should be at least  4</p>
+          <p ng-show="signupVm.login.cPasswd!= signupVm.login.passwd">password doesnot Match</p>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Remember me</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" ng-click=signupVm.signup(signupVm.login)>Submit</button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,51 @@
+  <div class="row text-center">
+    <div class="col-md-12">
+      <h1>Movie Flix</h1>
+    </div>
+  </div>
+  <div class="row">
+    <form>
+      <div class="col-md-4 col-sm-4">
+        <div class="form-group">
+          <label for="sel1">Select Type</label>
+          <select class="form-control" ng-model="moviesVm.filter.type" id="sel1">
+            <option ng-repeat="x in moviesVm.type" value="{{x}}">{{x}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="form-group">
+          <label for="sel1">Select Genre</label>
+          <select class="form-control" ng-model="moviesVm.filter.genre" id="sel1">
+            <option ng-repeat="x in moviesVm.genere" value="{{x}}">{{x}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="form-group">
+          <label for="sel1">Sort by</label>
+          <select class="form-control" ng-model="moviesVm.value" id="sel1">
+            <option ng-repeat="x in moviesVm.sort" value="{{x.param}}">{{x.rep}}</option>
+          </select>
+
+
+        </div>
+      </div>
+    </form>
+  </div>
+  <input type="search" class="form-control" placeholder="Please Search here" ng-model="moviesVm.search">
+  <div ng-repeat="movies in moviesVm.movies | filter:moviesVm.search | orderBy:moviesVm.value">
+    <div ng-show="moviesVm.show(movies)">
+      <div class="row divide" style="padding-bottom:10px">
+        <div class="col-md-2 col-sm-2 col-xs-2">
+          <img ng-src="{{movies.Poster}}" class="img-responsive" alt="movie poster">
+        </div>
+        <div class="col-md-10 col-sm-10 col-xs-10">
+          <h4>{{movies.Title}}</h4>
+          <span style="padding-right:10px">{{movies.imdbRating}} /10</span>
+          <span style="padding-right:10px">Genre: {{movies.Genre}}</span>
+          <span> Year: {{movies.Year}}</span>
+        </div>
+      </div>
+    </div>
+  </div>

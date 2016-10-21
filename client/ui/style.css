@@ -1,0 +1,22 @@
+/* Styles go here */
+
+section {
+  height:400px;
+}
+
+.divid{
+  margin-bottom:2px;
+}
+
+img {
+  width:60px;
+  height:60px;
+  border-radius:50%;
+} 
+
+.error p{
+  color:red;
+  margin:0;
+  
+  
+}
