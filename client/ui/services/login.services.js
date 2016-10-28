@@ -12,7 +12,7 @@
     self.update=updateDriver;
     
     function authenticate(loginVm) {
-     return  $http.post('http://localhost:8081/movie-flex/api/user/auth/123', {
+     return  $http.post('http://localhost:8080/movie-flex/api/user/auth/123', {
  "user_id":"123",
  "email":loginVm.email,
  "passwd":loginVm.password,
